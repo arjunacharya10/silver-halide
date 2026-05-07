@@ -1,65 +1,103 @@
-import Image from "next/image";
+import { ClickableImage } from "./components/ClickableImage";
+import { PhotoStrip } from "./components/PhotoStrip";
+
+const galleryImages = [
+  { src: "/images/hero-gallery/76510006.JPG", alt: "" },
+  { src: "/images/hero-gallery/76510008.JPG", alt: "" },
+  { src: "/images/hero-gallery/76510012.JPG", alt: "" },
+  { src: "/images/hero-gallery/76510014.JPG", alt: "" },
+  { src: "/images/hero-gallery/76510019.JPG", alt: "" },
+  { src: "/images/hero-gallery/76510001.JPG", alt: "" },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+    <>
+      {/* Hero */}
+      <section className="w-full">
+        <ClickableImage
+          src="/images/76510017.JPG"
+          alt="Tree canopy at Morris Arboretum"
+          width={3088}
+          height={2048}
+          className="w-full h-auto"
           priority
+          sizes="100vw"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </section>
+
+      {/* Memoir text */}
+      <section className="max-w-3xl mx-auto px-8 py-24 text-center">
+        <p className="font-[family-name:var(--font-cormorant)] italic text-[1.35rem] leading-9 text-zinc-200 mb-8">
+          We spent the afternoon wandering through Morris Arboretum, chasing the kind of light
+          that only shows up on heavy overcast days. I was there with my girlfriend and her friend,
+          moving slowly through the gardens while the sky hung low above the trees.
+        </p>
+        <p className="font-[family-name:var(--font-cormorant)] italic text-[1.35rem] leading-9 text-zinc-200">
+          At one point, the three of us stopped beneath this canopy of tangled limbs, and for a
+          second, it reminded me of the atmosphere in Skyfall and the visual poetry of Roger
+          Deakins, where nothing needs to happen for a moment to feel alive. Sometimes the best
+          photographs come from simply being present when the world arranges itself perfectly on
+          its own.
+        </p>
+      </section>
+
+      {/* Photo strip */}
+      <PhotoStrip />
+
+      {/* Body text */}
+      <section className="px-12 py-20 max-w-lg">
+        <p className="text-zinc-200 text-base leading-8">
+          My first real attempt at film photography taught me that film forces you to slow down,
+          observe, and trust moments you cannot instantly preview. Every frame here carries the
+          nervous excitement of not knowing whether anything actually turned out until much later.
+        </p>
+      </section>
+
+      {/* Wide panoramic */}
+      <section className="w-full">
+        <ClickableImage
+          src="/images/76510005.JPG"
+          alt="Roman Pillars of Morris"
+          width={3088}
+          height={2048}
+          className="w-full h-auto"
+          sizes="100vw"
+        />
+      </section>
+
+      {/* Camera specs */}
+      <section className="px-12 py-20 max-w-lg">
+        <p className="text-zinc-200 text-base leading-8 text-xl">
+          Camera: Kodak Snapic A1
+        </p>
+        <p className="text-zinc-200 text-base leading-8 text-xl">
+          Film: 400 ISO, 35mm
+        </p>
+      </section>
+
+      {/* Closing quote */}
+      <section className="max-w-3xl mx-auto px-8 py-28 text-center">
+        <p className="font-[family-name:var(--font-cormorant)] italic text-[1.35rem] leading-9 text-zinc-100">
+          It&apos;s moments like these, spent with nature, that remind us of the privilege we are quietly bestowed with.
+        </p>
+      </section>
+
+      {/* Masonry gallery */}
+      <section className="columns-1 sm:columns-2 lg:columns-3 gap-1 px-1 pb-1">
+        {galleryImages.map(({ src, alt }) => (
+          <div key={src} className="break-inside-avoid mb-1">
+            <ClickableImage
+              src={src}
+              alt={alt}
+              width={3088}
+              height={2048}
+              className="w-full h-auto block"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+          </div>
+        ))}
+      </section>
+    </>
   );
 }
