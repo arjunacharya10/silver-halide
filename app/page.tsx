@@ -29,15 +29,15 @@ export default function Home() {
       {/* Memoir text */}
       <section className="max-w-3xl mx-auto px-8 py-24 text-center">
         <p className="font-[family-name:var(--font-cormorant)] italic text-[1.35rem] leading-9 text-zinc-200 mb-8">
-          We spent the afternoon wandering through Morris Arboretum, chasing the kind of light
+          We spent the afternoon wandering through Morris Arboretum, chasing random light streaks and cherry blossoms
           that only shows up on heavy overcast days. I was there with my girlfriend and her friend,
-          moving slowly through the gardens while the sky hung low above the trees.
+          strolling through the gardens while the sky hung low above the trees.
         </p>
         <p className="font-[family-name:var(--font-cormorant)] italic text-[1.35rem] leading-9 text-zinc-200">
-          At one point, the three of us stopped beneath this canopy of tangled limbs, and for a
-          second, it reminded me of the atmosphere in Skyfall and the visual poetry of Roger
+          At one point, the three of us stopped beneath this canopy of tangled branches, and for a
+          second, it reminded me of the atmosphere in Skyfall and the visual poetry of Sir Roger
           Deakins, where nothing needs to happen for a moment to feel alive. Sometimes the best
-          photographs come from simply being present when the world arranges itself perfectly on
+          photographs come from simply being present, waiting, when the world arranges itself perfectly on
           its own.
         </p>
       </section>
@@ -95,7 +95,10 @@ export default function Home() {
       {/* Closing quote */}
       <section className="max-w-3xl mx-auto px-8 py-28 text-center">
         <p className="font-[family-name:var(--font-cormorant)] italic text-[1.35rem] leading-9 text-zinc-100">
-          It&apos;s moments like these, spent with nature, that remind us of the privilege we are quietly bestowed with.
+          It&apos;s moments like these, spent with nature, that remind us of the privilege we are silently bestowed with. Eternally grateful for this gift. 
+        </p>
+        <p className="font-[family-name:var(--font-cormorant)] italic text-[1.35rem] leading-9 text-zinc-100">
+          - Arjun Acharya
         </p>
       </section>
     </>
