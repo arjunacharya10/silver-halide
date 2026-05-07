@@ -76,13 +76,6 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Closing quote */}
-      <section className="max-w-3xl mx-auto px-8 py-28 text-center">
-        <p className="font-[family-name:var(--font-cormorant)] italic text-[1.35rem] leading-9 text-zinc-100">
-          It&apos;s moments like these, spent with nature, that remind us of the privilege we are quietly bestowed with.
-        </p>
-      </section>
-
       {/* Masonry gallery */}
       <section className="columns-1 sm:columns-2 lg:columns-3 gap-1 px-1 pb-1">
         {galleryImages.map(({ src, alt }) => (
@@ -97,6 +90,13 @@ export default function Home() {
             />
           </div>
         ))}
+      </section>
+
+      {/* Closing quote */}
+      <section className="max-w-3xl mx-auto px-8 py-28 text-center">
+        <p className="font-[family-name:var(--font-cormorant)] italic text-[1.35rem] leading-9 text-zinc-100">
+          It&apos;s moments like these, spent with nature, that remind us of the privilege we are quietly bestowed with.
+        </p>
       </section>
     </>
   );

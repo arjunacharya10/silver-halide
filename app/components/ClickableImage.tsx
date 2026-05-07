@@ -11,9 +11,10 @@ type Props = {
   className?: string;
   sizes?: string;
   priority?: boolean;
+  blurDataURL?: string;
 };
 
-export function ClickableImage({ src, alt, width, height, className, sizes, priority }: Props) {
+export function ClickableImage({ src, alt, width, height, className, sizes, priority, blurDataURL }: Props) {
   const { open } = useLightbox();
   return (
     <div className="cursor-zoom-in" onClick={() => open({ src, alt, width, height })}>
@@ -25,6 +26,8 @@ export function ClickableImage({ src, alt, width, height, className, sizes, prio
         className={className}
         sizes={sizes}
         priority={priority}
+        placeholder={blurDataURL ? 'blur' : 'empty'}
+        blurDataURL={blurDataURL}
       />
     </div>
   );
